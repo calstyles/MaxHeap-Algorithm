@@ -1,4 +1,3 @@
-
 public class MaxHeap {
 	private int array[];
 	private int heapSize;
@@ -26,9 +25,10 @@ public class MaxHeap {
 	}
 	
 	public void printMaxHeap() {
-		for(int i = 0; i < array.length; i++) {
-			System.out.println(array[i] + " ");
+		for(int i = 0; i < heapSize; ++i) {
+			System.out.print(array[i] + " ");
 		}
+		System.out.println();
 		System.out.println();
 	}
 	
@@ -39,6 +39,8 @@ public class MaxHeap {
 		int large = i;
 		if(left < heapSize &&  array[large] < array[left]) {
 			large = left;
+		}else {
+			large = i;
 		}
 		if(right < heapSize && array[large] < array[right]){
 			large = right;
@@ -60,12 +62,12 @@ public class MaxHeap {
 	public void heapSort() {
 		buildMaxHeap();
 		int backUp = heapSize;
-		for(int i = heapSize; i < 2; i--) {
-			int temp = array[1];
-			array[1] = array[i];
+		for(int i = heapSize - 1; i > 0; i--) {
+			int temp = array[0];
+			array[0] = array[i];
 			array[i] = temp;
 			heapSize--;
-			maxHeapify(1);
+			maxHeapify(0);
 		}
 		heapSize = backUp;
 	}
