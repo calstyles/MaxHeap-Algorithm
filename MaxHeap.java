@@ -69,14 +69,4 @@ public class MaxHeap {
 		}
 		heapSize = backUp;
 	}
-	
-	public static void main(String[] args) {
-		int[] arr = {10, 20, 25, 6, 12, 15, 4, 16};
-		int[] arr1 = {30, 29, 43, 64, 46, 32, 75, 34};
-		int[] arr2 = {20, 15, 10, 11, 12};
-		MaxHeap m1 = new MaxHeap(arr2);
-		m1.printMaxHeap();
-		m1.heapSort();
-		m1.printMaxHeap();
-	}
 }
